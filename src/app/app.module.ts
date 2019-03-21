@@ -11,7 +11,7 @@ import { ContryComponent } from './components/contry/contry.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 
 //services
-
+import { ContriesService } from './components/services/contries.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,9 @@ import { HeaderComponent } from './components/layout/header/header.component';
     BrowserModule,
     app_routing
   ],
-  providers: [],
+  providers: [
+    ContriesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
