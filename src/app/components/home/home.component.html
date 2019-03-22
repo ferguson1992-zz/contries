@@ -1,3 +1,32 @@
-<p>
-  home works!
-</p>
+<h1>Lista de Países</h1>
+<button (click)="filter()" class="btn btn-outline-success">Agregar Filtro</button>
+<div *ngIf="addFilter" class="filter">
+    <label for="lenguaje">Lenguaje</label>
+    <select [(ngModel)]="lang" (change)="saveFilter()" class="form-control" name="lang">
+        <option value="">Seleccione una opción...</option>
+        <option *ngFor="let lang of languages" [value]="lang">{{lang}}</option>
+    </select>
+    <label for="lenguaje">Region</label>
+    <select [(ngModel)]="region" (change)="saveFilter()" class="form-control" name="region">
+        <option value="">Seleccione una opción...</option>
+        <option *ngFor="let region of regions" [value]="region">{{region}}</option>
+    </select>
+</div>
+<hr>
+<div class="row">
+  
+<div *ngFor="let contry of contries" class="card md-4" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img [src]="contry.flag" class="card-img" [alt]="contry.name">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{contry.name}}</h5>
+            <p class="card-text">Capital: {{contry.name}}</p>
+            <p class="card-text"><small class="text-muted">Continente: {{contry.region}}}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
